@@ -103,6 +103,11 @@ $current_username = $_SESSION['username'] ?? '';
                     <ul class="dropdown-menu dropdown-menu-end">
                         <li><span class="dropdown-item-text text-muted small"><?= e($current_username) ?></span></li>
                         <li><hr class="dropdown-divider"></li>
+                        <?php if ($current_role === 'siswa'): ?>
+                        <li><a class="dropdown-item" href="<?= base_url('siswa/profil/index.php') ?>"><i class="fas fa-user me-2"></i>Profil</a></li>
+                        <li><a class="dropdown-item" href="<?= base_url('siswa/profil/ubah_password.php') ?>"><i class="fas fa-key me-2"></i>Ubah Password</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <?php endif; ?>
                         <li><a class="dropdown-item text-danger" href="<?= base_url('logout.php') ?>"><i class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
                     </ul>
                 </li>

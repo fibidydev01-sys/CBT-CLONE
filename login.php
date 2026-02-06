@@ -20,6 +20,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['role'])) {
 $error = '';
 $school_name = get_setting('school_name', $conn, 'CBT Nusantara');
 $school_desc = get_setting('school_description', $conn, 'Portal Ujian CBT');
+$maintenance = get_setting('maintenance_mode', $conn, '0');
 
 // Handle error dari redirect
 if (isset($_GET['error'])) {
@@ -55,6 +56,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt->close();
 
             if ($user && password_verify($password, $user['password'])) {
+                // Cek maintenance mode - hanya admin yang bisa login
+                if ($maintenance === '1' && $role !== 'admin') {
+                    $error = 'Sistem sedang dalam pemeliharaan. Hanya admin yang dapat login saat ini.';
+                    break;
+                }
+
                 // Cek apakah siswa diblokir
                 if ($role === 'siswa' && !empty($user['is_blocked'])) {
                     $error = 'Akun Anda telah diblokir. Hubungi pengawas atau admin.';

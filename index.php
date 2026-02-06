@@ -37,13 +37,15 @@ $maintenance = get_setting('maintenance_mode', $conn, '0');
 
 if ($maintenance === '1') {
     echo '<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Maintenance</title>
+    <title>Maintenance - ' . e($school_name) . '</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     </head><body class="bg-light d-flex align-items-center min-vh-100">
     <div class="container text-center">
         <i class="fas fa-tools" style="font-size:4rem;color:#6c757d;"></i>
         <h2 class="mt-3">Sistem Sedang Maintenance</h2>
         <p class="text-muted">Silakan coba beberapa saat lagi.</p>
+        <a href="' . base_url('login.php') . '" class="btn btn-sm btn-outline-secondary mt-2">Login Admin</a>
     </div></body></html>';
     exit();
 }
@@ -135,9 +137,13 @@ if ($maintenance === '1') {
 </head>
 <body>
     <div class="landing-card">
+        <?php if ($school_logo && file_exists(__DIR__ . '/' . $school_logo)): ?>
+        <img src="<?= base_url($school_logo) ?>" alt="Logo" class="logo">
+        <?php else: ?>
         <div class="logo-placeholder">
             <i class="fas fa-laptop-code"></i>
         </div>
+        <?php endif; ?>
         <h1><?= e($school_name) ?></h1>
         <p><?= e($school_desc) ?></p>
         <a href="<?= base_url('login.php') ?>" class="btn btn-primary btn-login">
