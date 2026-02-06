@@ -3,11 +3,11 @@
 -- Single School Edition v2.0
 -- ============================================================
 
-CREATE DATABASE IF NOT EXISTS `cbt_nusantara`
+CREATE DATABASE IF NOT EXISTS `cbt_pkbm_albarakah`
 CHARACTER SET utf8mb4
 COLLATE utf8mb4_unicode_ci;
 
-USE `cbt_nusantara`;
+USE `cbt_pkbm_albarakah`;
 
 -- ============================================================
 -- 1. USERS & AUTHENTICATION (4 Tables)
