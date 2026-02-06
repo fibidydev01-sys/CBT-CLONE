@@ -1,0 +1,28 @@
+# Uploads (keep directory, ignore files)
+uploads/soal/*
+uploads/import/*
+uploads/logo/*
+!uploads/soal/.gitkeep
+!uploads/import/.gitkeep
+!uploads/logo/.gitkeep
+
+# Vendor (install via composer)
+vendor/
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+
+# Environment
+.env

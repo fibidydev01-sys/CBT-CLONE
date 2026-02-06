@@ -1,0 +1,141 @@
+/**
+ * Responsive CSS
+ * CBT Nusantara - Single School Edition
+ */
+
+/* ==================== TABLET (< 992px) ==================== */
+@media (max-width: 991.98px) {
+    .sidebar {
+        left: calc(-1 * var(--sidebar-width));
+    }
+
+    .sidebar.show {
+        left: 0;
+    }
+
+    .content-area {
+        margin-left: 0;
+    }
+
+    .sidebar-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Overlay saat sidebar terbuka */
+    .sidebar-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.5);
+        z-index: 99;
+    }
+
+    .sidebar-overlay.show {
+        display: block;
+    }
+
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* ==================== SMARTPHONE (< 768px) ==================== */
+@media (max-width: 767.98px) {
+    .content-area {
+        padding: 15px;
+    }
+
+    .stat-card {
+        padding: 15px;
+    }
+
+    .stat-card .stat-number {
+        font-size: 1.5rem;
+    }
+
+    .stat-card .stat-icon {
+        font-size: 2rem;
+    }
+
+    .card-body {
+        padding: 15px;
+    }
+
+    .table thead th {
+        font-size: 0.75rem;
+    }
+
+    .table tbody td {
+        font-size: 0.8rem;
+    }
+
+    /* Action buttons stacking */
+    .btn-group-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .btn-group-actions .btn {
+        width: 100%;
+    }
+
+    .page-header h4 {
+        font-size: 1.2rem;
+    }
+
+    /* Card columns full width on mobile */
+    .col-md-4, .col-md-6 {
+        margin-bottom: 15px;
+    }
+}
+
+/* ==================== EXTRA SMALL (< 576px) ==================== */
+@media (max-width: 575.98px) {
+    .content-area {
+        padding: 10px;
+    }
+
+    /* Prevent zoom on input focus (iOS) */
+    input, select, textarea {
+        font-size: 16px !important;
+    }
+
+    .navbar-brand span {
+        font-size: 0.9rem;
+    }
+}
+
+/* ==================== LANDSCAPE MOBILE ==================== */
+@media (max-width: 767.98px) and (orientation: landscape) {
+    .sidebar {
+        width: 200px;
+    }
+}
+
+/* ==================== PRINT ==================== */
+@media print {
+    .sidebar,
+    .navbar,
+    .sidebar-toggle,
+    .btn,
+    .sidebar-overlay {
+        display: none !important;
+    }
+
+    .content-area {
+        margin-left: 0 !important;
+        padding: 0 !important;
+    }
+
+    .card {
+        box-shadow: none !important;
+        border: 1px solid #dee2e6 !important;
+    }
+}

@@ -1,0 +1,326 @@
+/**
+ * Global Styles
+ * CBT Nusantara - Single School Edition
+ */
+
+/* ==================== ROOT VARIABLES ==================== */
+:root {
+    --primary: #0d6efd;
+    --primary-dark: #0a58ca;
+    --sidebar-width: 260px;
+    --navbar-height: 56px;
+}
+
+/* ==================== GLOBAL ==================== */
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: #f0f2f5;
+    color: #212529;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ==================== LAYOUT WITH SIDEBAR ==================== */
+.main-wrapper {
+    min-height: calc(100vh - var(--navbar-height));
+}
+
+.content-with-sidebar {
+    display: flex;
+    min-height: calc(100vh - var(--navbar-height));
+}
+
+.content-area {
+    flex: 1;
+    margin-left: var(--sidebar-width);
+    padding: 25px;
+    min-height: calc(100vh - var(--navbar-height));
+}
+
+/* ==================== SIDEBAR ==================== */
+.sidebar {
+    position: fixed;
+    top: var(--navbar-height);
+    left: 0;
+    width: var(--sidebar-width);
+    height: calc(100vh - var(--navbar-height));
+    background: #fff;
+    border-right: 1px solid #e9ecef;
+    overflow-y: auto;
+    z-index: 100;
+    transition: left 0.3s ease;
+}
+
+.sidebar-header {
+    padding: 20px 20px 10px;
+    border-bottom: 1px solid #f0f2f5;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+}
+
+.sidebar-divider {
+    padding: 15px 20px 5px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #adb5bd;
+    letter-spacing: 0.5px;
+}
+
+.sidebar-item a {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    color: #495057;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+    border-left: 3px solid transparent;
+}
+
+.sidebar-item a:hover {
+    background: #f0f2f5;
+    color: var(--primary);
+}
+
+.sidebar-item.active a {
+    background: #e7f1ff;
+    color: var(--primary);
+    border-left-color: var(--primary);
+    font-weight: 600;
+}
+
+.sidebar-item a i {
+    width: 20px;
+    text-align: center;
+    margin-right: 12px;
+    font-size: 0.85rem;
+}
+
+/* ==================== NAVBAR ==================== */
+.navbar {
+    z-index: 200;
+}
+
+.navbar-brand {
+    font-size: 1.1rem;
+}
+
+/* ==================== CARDS ==================== */
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transition: box-shadow 0.2s;
+}
+
+.card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.card-header {
+    background: white;
+    border-bottom: 1px solid #f0f2f5;
+    border-radius: 12px 12px 0 0 !important;
+    font-weight: 600;
+    padding: 15px 20px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+/* ==================== STAT CARDS (Dashboard) ==================== */
+.stat-card {
+    border-radius: 12px;
+    padding: 20px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card .stat-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3rem;
+    opacity: 0.2;
+}
+
+.stat-card .stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.stat-card .stat-label {
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+.stat-card.bg-primary-gradient { background: linear-gradient(135deg, #0d6efd, #0a58ca); }
+.stat-card.bg-success-gradient { background: linear-gradient(135deg, #198754, #146c43); }
+.stat-card.bg-warning-gradient { background: linear-gradient(135deg, #ffc107, #e0a800); color: #212529; }
+.stat-card.bg-info-gradient { background: linear-gradient(135deg, #0dcaf0, #0aa2c0); }
+.stat-card.bg-danger-gradient { background: linear-gradient(135deg, #dc3545, #b02a37); }
+
+/* ==================== TABLES ==================== */
+.table {
+    margin-bottom: 0;
+}
+
+.table thead th {
+    background: #f8f9fa;
+    border-bottom: 2px solid #dee2e6;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    color: #495057;
+    white-space: nowrap;
+}
+
+.table tbody td {
+    vertical-align: middle;
+    font-size: 0.9rem;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f0f7ff;
+}
+
+/* ==================== FORMS ==================== */
+.form-control, .form-select {
+    border-radius: 8px;
+    border: 2px solid #e9ecef;
+    padding: 10px 15px;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.2rem rgba(13,110,253,0.15);
+}
+
+.form-label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #495057;
+}
+
+/* ==================== BUTTONS ==================== */
+.btn {
+    border-radius: 8px;
+    font-weight: 500;
+    padding: 8px 20px;
+}
+
+.btn-sm {
+    padding: 5px 12px;
+    font-size: 0.8rem;
+}
+
+/* ==================== BADGES ==================== */
+.badge {
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 6px;
+}
+
+/* ==================== PAGE HEADER ==================== */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.page-header h4 {
+    font-weight: 700;
+    color: #212529;
+    margin: 0;
+}
+
+.breadcrumb {
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+/* ==================== ALERTS ==================== */
+.alert {
+    border-radius: 10px;
+    border: none;
+}
+
+/* ==================== MOBILE TOGGLE ==================== */
+.sidebar-toggle {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 12px rgba(13,110,253,0.4);
+    z-index: 300;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* ==================== EMPTY STATE ==================== */
+.empty-state {
+    text-align: center;
+    padding: 50px 20px;
+    color: #6c757d;
+}
+
+.empty-state i {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    opacity: 0.5;
+}
+
+/* ==================== SCROLLBAR ==================== */
+.sidebar::-webkit-scrollbar {
+    width: 5px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: #dee2e6;
+    border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: #adb5bd;
+}
+
+/* ==================== UTILITIES ==================== */
+.text-truncate-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.min-h-300 {
+    min-height: 300px;
+}
