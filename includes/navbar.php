@@ -82,6 +82,9 @@ $current_username = $_SESSION['username'] ?? '';
                     <a class="nav-link" href="<?= base_url('pengawas/index.php') ?>"><i class="fas fa-tachometer-alt me-1"></i> Dashboard</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="<?= base_url('pengawas/token.php') ?>"><i class="fas fa-key me-1"></i> Token</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="<?= base_url('pengawas/monitoring.php') ?>"><i class="fas fa-desktop me-1"></i> Monitoring</a>
                 </li>
                 <li class="nav-item">

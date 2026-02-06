@@ -1,6 +1,6 @@
 <?php
 /**
- * Sidebar Template - untuk halaman admin/guru
+ * Sidebar Template - untuk halaman admin/guru/pengawas
  * CBT Nusantara
  *
  * Set $active_menu sebelum include untuk highlight menu aktif
@@ -37,6 +37,15 @@ if ($current_role === 'admin') {
         ['url' => 'guru/ujian/index.php', 'icon' => 'fas fa-file-alt', 'label' => 'Ujian', 'key' => 'ujian'],
         ['divider' => true, 'label' => 'LAPORAN'],
         ['url' => 'guru/laporan/index.php', 'icon' => 'fas fa-chart-pie', 'label' => 'Laporan', 'key' => 'laporan'],
+    ];
+} elseif ($current_role === 'pengawas') {
+    $menus = [
+        ['url' => 'pengawas/index.php', 'icon' => 'fas fa-tachometer-alt', 'label' => 'Dashboard', 'key' => 'dashboard'],
+        ['divider' => true, 'label' => 'UJIAN'],
+        ['url' => 'pengawas/token.php', 'icon' => 'fas fa-key', 'label' => 'Token', 'key' => 'token'],
+        ['url' => 'pengawas/monitoring.php', 'icon' => 'fas fa-desktop', 'label' => 'Monitoring', 'key' => 'monitoring'],
+        ['divider' => true, 'label' => 'LOG'],
+        ['url' => 'pengawas/log_aktivitas.php', 'icon' => 'fas fa-history', 'label' => 'Log Aktivitas', 'key' => 'log'],
     ];
 }
 ?>
